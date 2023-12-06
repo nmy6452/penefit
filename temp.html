@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<style>
+    label {
+        width: 100px;
+    }
+</style>
+
+<head>
+    <script src="./temp.js"></script>
+</head>
+
+<body>
+    <h2>입력</h2>
+    <!-- <form> -->
+    <div>
+        <label for="pet_type">나의 반려동물</label>
+        <select id="pet_type">
+            <option value="dog">강아지</option>
+            <option value="cat">고양이</option>
+        </select>
+    </div>
+    <div id="dog">
+        <label for="dog_activity_Index">반려견 활동지수</label>
+        <select id="dog_activity_Index">
+            <option value="BABY">4 개월 이하</option>
+            <option value="TEENAGER">5개월 이상 12개월 미만</option>
+            <option value="PREGNANT">임신</option>
+            <option value="LACTATION">수유</option>
+            <option value="OLD">노령</option>
+            <option value="ELDERLY">고령</option>
+            <option value="FAT">체중 감량이 필요한</option>
+            <option value="CHUBBY"> 20% 비만 미만</option>
+            <option value="UNNEUTERED">중성화수술을 받지 않은 성묘</option>
+            <option value="NEUTERED">중성화수술을 받은 성묘</option>
+            <option value="ATHLETIC">운동량이 많고 활발한 성묘</option>
+        </select>
+    </div>
+    <div id="cat">
+        <label for="cat_activity_Index">반려묘 활동지수</label>
+        <select id="cat_activity_Index">
+            <option value="BABY">3 개월 미만</option>
+            <option value="JUNIOR">4개월 이상 6개월 미만</option>
+            <option value="TEENAGER"> 7개월 이상 12개월 미만</option>
+            <option value="PREGNANT">임신</option>
+            <option value="LACTATION">수유</option>
+            <option value="OLD">노령</option>
+            <option value="ELDERLY">고령</option>
+            <option value="FAT">체중 감량이 필요한</option>
+            <option value="CHUBBY"> 20% 비만 미만</option>
+            <option value="UNNEUTERED">중성화수술을 받지 않은 성묘</option>
+            <option value="NEUTERED">중성화수술을 받은 성묘</option>
+            <option value="ATHLETIC">운동량이 많고 활발한 성묘</option>
+        </select>
+    </div>
+    <div>
+        <label for="feed">사료</label>
+        <select id="feed">
+            <option value="11">고정</option>
+        </select>
+    </div>
+    <div>
+        <label for="weight">체중</label>
+        <input id="weight" type="number" />
+    </div>
+    <!-- <div>
+        <label for="id4">조회분</label>
+        <input id="id4" type="number" />
+    </div>
+    <div>
+        <label for="id5">칼슘</label>
+        <input id="id5" type="number" />
+    </div>
+    <div>
+        <label for="id6">인</label>
+        <input id="id6" type="number" />
+    </div>
+    <div>
+        <label for="id7">수분</label>
+        <input id="id7" type="number" />
+    </div> -->
+    <button onclick="make_result()">계산하기</button>
+
+    <h2>결과</h2>
+    <p>산식은 참고로만 사용하세요.</p>
+    <!-- <button onclick="alat()">alat</button> -->
+    <!-- </form> -->
+    <div>
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>제품 100g 당 칼로리</th>
+                        <td>산식: (조단백질*3.5)(조지방*8.5)(탄수화몰*3.5)</td>
+                        <td id="calorie_count"></td>
+                    </tr>
+                    <tr>
+                        <th>단위 칼로리</th>
+                        <td>산식: (조단백질*3.5)(조지방*8.5)(탄수화몰*3.5)/100</td>
+                        <td id="calorie_per_count"></td>
+                    </tr>
+                    <tr>
+                        <th>재품 총 칼로리(무게 고정 100)</th>
+                        <td>산식: (조단백질*3.5)(조지방*8.5)(탄수화몰*3.5)/100*무게</td>
+                        <td id="total_calorie_count"></td>
+                    </tr>
+                    <tr>
+                        <th>반려동물 활동지수</th>
+                        <td>산식: 표1 참고</td>
+                        <td id="activity_index"></td>
+                    </tr>
+                    <tr>
+                        <th>반려동물 기초 대사량</th>
+                        <td>산식: ??</td>
+                        <td id="basal_metabolic"></td>
+                    </tr>
+                    <tr>
+                        <th>빈려동물 하루 섭취 권장 칼로리</th>
+                        <td>산식: 기초 대사량 * 활동지수</td>
+                        <td id="recommended_calories"></td>
+                    </tr>
+                    <tr>
+                        <th>사료 급여량</th>
+                        <td>산식: 권장 칼로리 / 단위 칼로리</td>
+                        <td id="feed_amount"></td>
+                    </tr>
+                    <tr>
+                        <th>하루 수분 필요량</th>
+                        <td>산식: (체중^0.75) * 132</td>
+                        <td id="water_needs"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
