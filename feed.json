@@ -1,33 +1,32 @@
-feed = {
-    feed1:{
-        crude_protein: 1,
-        crude_fat: 1,
-        carbohydrate: 1
+{
+    "feed1":{
+        "crude_protein": 1,
+        "crude_fat": 1,
+        "carbohydrate": 1
     },
-    feed2:{
-        crude_protein: 2,
-        crude_fat: 2,
-        carbohydrate: 2
+    "feed2":{
+        "crude_protein": 2,
+        "crude_fat": 2,
+        "carbohydrate": 2
     },
-    feed3:{
-        crude_protein: 3,
-        crude_fat: 3,
-        carbohydrate: 3
+    "feed3":{
+        "crude_protein": 3,
+        "crude_fat": 3,
+        "carbohydrate": 3
     },
-    feed4:{
-        crude_protein: 4,
-        crude_fat: 4,
-        carbohydrate: 4
+    "feed4":{
+        "crude_protein": 4,
+        "crude_fat": 4,
+        "carbohydrate": 4
     },
-    feed5:{
-        crude_protein: 5,
-        crude_fat: 5,
-        carbohydrate: 5
+    "feed5":{
+        "crude_protein": 5,
+        "crude_fat": 5,
+        "carbohydrate": 5
     },
-    feed6:{
-        crude_protein: 6,
-        crude_fat: 6,
-        carbohydrate: 6
-    },
-    
+    "feed6":{
+        "crude_protein": 6,
+        "crude_fat": 6,
+        "carbohydrate": 6
+    }
 }

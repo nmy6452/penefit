@@ -1,29 +1,29 @@
-pet = {
-    dog: {
-        BABY: 3,
-        TEENAGER: 2,
-        PREGNANT: 2,
-        LACTATION: 5,
-        OLD: 1.6,
-        ELDERLY: 1.4,
-        FAT: 1,
-        CHUBBY: 1.4,
-        UNNEUTERED: 1.8,
-        NEUTERED: 1.6,
-        ATHLETIC: 2
+{
+    "dog": {
+        "BABY": 3,
+        "TEENAGER": 2,
+        "PREGNANT": 2,
+        "LACTATION": 5,
+        "OLD": 1.6,
+        "ELDERLY": 1.4,
+        "FAT": 1,
+        "CHUBBY": 1.4,
+        "UNNEUTERED": 1.8,
+        "NEUTERED": 1.6,
+        "ATHLETIC": 2
     },
-    cat: {
-        BABY: 3,
-        JUNIOR: 2.5,
-        TEENAGER: 2,
-        PREGNANT: 2,
-        LACTATION: 5,
-        OLD: 1.6,
-        ELDERLY: 1.4,
-        FAT: 0.8,
-        CHUBBY: 1,
-        UNNEUTERED: 1.6,
-        NEUTERED: 1.4,
-        ATHLETIC: 2.5
+    "cat": {
+        "BABY": 3,
+        "JUNIOR": 2.5,
+        "TEENAGER": 2,
+        "PREGNANT": 2,
+        "LACTATION": 5,
+        "OLD": 1.6,
+        "ELDERLY": 1.4,
+        "FAT": 0.8,
+        "CHUBBY": 1,
+        "UNNEUTERED": 1.6,
+        "NEUTERED": 1.4,
+        "ATHLETIC": 2.5
     }
 }
