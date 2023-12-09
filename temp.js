@@ -1,40 +1,10 @@
-const DOG = {
-    BABY: 3,
-    TEENAGER: 2,
-    PREGNANT: 2,
-    LACTATION: 5,
-    OLD: 1.6,
-    ELDERLY: 1.4,
-    FAT: 1,
-    CHUBBY: 1.4,
-    UNNEUTERED: 1.8,
-    NEUTERED: 1.6,
-    ATHLETIC: 2
-};
+const PET = JSON.parse(JSON.stringify(pet));
+const FEED = JSON.parse(JSON.stringify(feed));
 
-const CAT = {
-    BABY: 3,
-    JUNIOR: 2.5,
-    TEENAGER: 2,
-    PREGNANT: 2,
-    LACTATION: 5,
-    OLD: 1.6,
-    ELDERLY: 1.4,
-    FAT: 0.8,
-    CHUBBY: 1,
-    UNNEUTERED: 1.6,
-    NEUTERED: 1.4,
-    ATHLETIC: 2.5
-};
 
-const FEED = {
-    crude_protein: 1,
-    crude_fat: 1,
-    carbohydrate: 1
-}
 
 function make_result() {
-    
+
     var pet_type = document.getElementById("pet_type").value;
     var dog_activity_Index = document.getElementById("dog_activity_Index").value;
     var cat_activity_Index = document.getElementById("cat_activity_Index").value;
@@ -48,17 +18,18 @@ function make_result() {
         activity_Index = activityIndex(pet_type,cat_activity_Index);
     }
     // alert(activity_Index);
+    // console.log(FEED[feed]);
 
     //공통부
-    document.getElementById("calorie_count").innerHTML = calorieCount(FEED);
-    document.getElementById("calorie_per_count").innerHTML = caloriePerCount(FEED);
-    document.getElementById("total_calorie_count").innerHTML = totalCalorieCount(FEED,100);
+    document.getElementById("calorie_count").innerHTML = calorieCount(FEED[feed]);
+    document.getElementById("calorie_per_count").innerHTML = caloriePerCount(FEED[feed]);
+    document.getElementById("total_calorie_count").innerHTML = totalCalorieCount(FEED[feed],100);
     
     //개별부
     document.getElementById("activity_index").innerHTML = activity_Index;
     document.getElementById("basal_metabolic").innerHTML = basalMetabolic(pet_type,weight);
     document.getElementById("recommended_calories").innerHTML = recommendedCalories(pet_type,activity_Index,weight);
-    document.getElementById("feed_amount").innerHTML = feedAmount(pet_type,activity_Index,weight,FEED);
+    document.getElementById("feed_amount").innerHTML = feedAmount(pet_type,activity_Index,weight,FEED[feed]);
     document.getElementById("water_needs").innerHTML = waterNeeds(pet_type,weight);
 
 
@@ -82,11 +53,11 @@ function totalCalorieCount(feed,weight){
 function activityIndex(pet_type, activity_index){
     if(pet_type == "dog"){
         //TODO 수정 필요
-        return DOG[activity_index];
+        return PET.dog[activity_index];
     }
     else if(pet_type == "cat"){
         //TODO 수정 필요
-        return CAT[activity_index];
+        return PET.cat[activity_index];
     }
 }
 
