@@ -6,12 +6,42 @@
 </style>
 
 <head>
-    <script src="./temp.js"></script>
+    <script src="./Calculator.js"></script>
+    <script src="./UiManager.js"></script>
 </head>
 
 <body>
     <h2>입력</h2>
     <!-- <form> -->
+    <div>
+        <label for="feed_type">사료 급여방식</label>
+        <label><input type="radio" name="feed_type" onchange="feedTypeManage()" value="single" checked/>페네밀만</label>
+        <label><input type="radio" name="feed_type" onchange="feedTypeManage()" value="mixed"/>타사료와 혼합</label>
+    </div>
+    <div id="extra_feed" style="display:none;">
+        <div>
+            <label for="extra_feed_Kcal">타사료 칼로리</label>
+            <input id="extra_feed_Kcal" type="number" />
+        </div>
+        <div>
+            <label for="extra_feed_amount">타사료 급여량</label>
+            <input id="extra_feed_amount" type="number" />
+        </div>
+    </div>
+    <div>
+        <label for="feed">페네밀</label>
+        <select id="feed">
+            <option value="feed1">페네밀1</option>
+            <option value="feed2">페네밀2</option>
+            <option value="feed3">페네밀3</option>
+            <option value="feed4">페네밀4</option>
+            <option value="feed5">페네밀5</option>
+        </select>
+    </div>
+    <div>
+        <label for="penemill_amount">페네밀 급여량</label>
+        <input id="penemill_amount" type="number" />
+    </div>
     <div>
         <label for="pet_type">나의 반려동물</label>
         <select id="pet_type">
@@ -53,40 +83,13 @@
         </select>
     </div>
     <div>
-        <label for="feed">사료</label>
-        <select id="feed">
-            <option value="feed1">사료1</option>
-            <option value="feed2">사료2</option>
-            <option value="feed3">사료3</option>
-            <option value="feed4">사료4</option>
-            <option value="feed5">사료5</option>
-        </select>
-    </div>
-    <div>
         <label for="weight">체중</label>
         <input id="weight" type="number" />
     </div>
-    <!-- <div>
-        <label for="id4">조회분</label>
-        <input id="id4" type="number" />
-    </div>
-    <div>
-        <label for="id5">칼슘</label>
-        <input id="id5" type="number" />
-    </div>
-    <div>
-        <label for="id6">인</label>
-        <input id="id6" type="number" />
-    </div>
-    <div>
-        <label for="id7">수분</label>
-        <input id="id7" type="number" />
-    </div> -->
-    <button onclick="make_result()">계산하기</button>
+    <button onclick="makeResult()">계산하기</button>
 
     <h2>결과</h2>
     <p>산식은 참고로만 사용하세요.</p>
-    <!-- <button onclick="alat()">alat</button> -->
     <!-- </form> -->
     <div>
         <div>
