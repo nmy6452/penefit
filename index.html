@@ -16,17 +16,17 @@
     <div>
         <label for="feed_type">사료 급여방식</label>
         <label><input type="radio" name="feed_type" onchange="feedTypeManage()" value="single" checked/>페네밀만</label>
-        <label><input type="radio" name="feed_type" onchange="feedTypeManage()" value="mixed"/>타사료와 혼합</label>
+        <label><input type="radio" name="feed_type" onchange="feedTypeManage()" value="mixed"/>페네밀로 갈아타기</label>
     </div>
     <div id="extra_feed" style="display:none;">
         <div>
             <label for="extra_feed_Kcal">타사료 칼로리</label>
             <input id="extra_feed_Kcal" type="number" />
         </div>
-        <div>
-            <label for="extra_feed_amount">타사료 급여량</label>
+        <!-- <div>
+            <label for="extra_feed_amount">타사료 총중량</label>
             <input id="extra_feed_amount" type="number" />
-        </div>
+        </div> -->
     </div>
     <div>
         <label for="feed">페네밀</label>
@@ -49,6 +49,7 @@
             <option value="cat">고양이</option>
         </select>
     </div>
+    <!-- 따로 보이게 작업하기 -->
     <div id="dog">
         <label for="dog_activity_Index">반려견 활동지수</label>
         <select id="dog_activity_Index">
@@ -96,6 +97,8 @@
             <table>
                 <tbody>
                     <tr>
+                        <!-- 1K 당 -->
+                        <th>제품 1Kg 당 칼로리</th>
                         <th>제품 100g 당 칼로리</th>
                         <td>산식: (조단백질*3.5)(조지방*8.5)(탄수화몰*3.5)</td>
                         <td id="calorie_count"></td>
@@ -116,22 +119,22 @@
                         <td id="activity_index"></td>
                     </tr>
                     <tr>
-                        <th>반려동물 기초 대사량</th>
+                        <th>*반려동물 기초 대사량</th>
                         <td>산식: ??</td>
                         <td id="basal_metabolic"></td>
                     </tr>
                     <tr>
-                        <th>빈려동물 하루 섭취 권장 칼로리</th>
+                        <th>*빈려동물 하루 섭취 권장 칼로리</th>
                         <td>산식: 기초 대사량 * 활동지수</td>
                         <td id="recommended_calories"></td>
                     </tr>
                     <tr>
-                        <th>사료 급여량</th>
+                        <th>*사료 급여량</th>
                         <td>산식: 권장 칼로리 / 단위 칼로리</td>
                         <td id="feed_amount"></td>
                     </tr>
                     <tr>
-                        <th>하루 수분 필요량</th>
+                        <th>*하루 수분 필요량</th>
                         <td>산식: (체중^0.75) * 132</td>
                         <td id="water_needs"></td>
                     </tr>
