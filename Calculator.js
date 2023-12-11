@@ -52,11 +52,7 @@ function makeResult() {
 
     let penemill_amount = 0;
     if(feed_type == "mixed"){
-        console.log("feedAmount: " + feedAmount(pet_type, activity_Index, weight, extra_feed_kcal, extra_feed_amount));
-        console.log("caloriePerCount : "+caloriePerCount(FEED[feed]));
         penemill_amount = (feedAmount(pet_type, activity_Index, weight, extra_feed_kcal, extra_feed_amount) / caloriePerCount(FEED[feed]));
-        console.log("penemill_amount: "+penemill_amount);
-
     }
     else{
         penemill_amount = penemillAmount(pet_type, activity_Index, weight, FEED[feed]);

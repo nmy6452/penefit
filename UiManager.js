@@ -10,7 +10,6 @@ function feedTypeManage(){
 
 function petTypeManage(){
     var pet_type = document.querySelector('input[name="pet_type"]:checked').value;
-    console.log(pet_type);
     if(pet_type == "dog"){
         document.getElementById("cat").setAttribute('style',"display:none;");
         document.getElementById("dog").removeAttribute('style');
