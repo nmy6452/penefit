@@ -1,14 +1,14 @@
 {
     "feed1":{
-        "crude_protein": 10,
-        "crude_fat": 20,
-        "carbohydrate": 30,
+        "crude_protein": 50.7,
+        "crude_fat": 10.4,
+        "carbohydrate": 1.8,
         "penemill_amount": 100
     },
     "feed2":{
-        "crude_protein": 10,
-        "crude_fat": 20,
-        "carbohydrate": 30,
+        "crude_protein": 56.33,
+        "crude_fat": 11.56,
+        "carbohydrate": 20.56,
         "penemill_amount": 500
     },
     "feed3":{

@@ -28,7 +28,7 @@ function makeResult() {
     let feed = document.getElementById("feed").value;
     let weight = document.getElementById("weight").value;
     let extra_feed_kcal = document.getElementById("extra_feed_kcal").value;
-    let extra_feed_amount = document.getElementById("extra_feed_amount").value;
+    let extra_feed_amount = document.getElementById("extra_feed_amount").value / 1000;
     // let penemill_amount = document.getElementById("penemill_amount").value;
     let activity_Index = null;
     if (pet_type == "dog") {
@@ -41,14 +41,14 @@ function makeResult() {
     // console.log(FEED[feed]);
 
     //공통부
-    document.getElementById("calorie_count").innerHTML = calorieCount(FEED[feed]);
-    document.getElementById("calorie_per_count").innerHTML = caloriePerCount(FEED[feed]);
-    document.getElementById("total_calorie_count").innerHTML = totalCalorieCount(FEED[feed]);
+    document.getElementById("calorie_count").innerHTML = Math.floor(calorieCount(FEED[feed]));
+    document.getElementById("calorie_per_count").innerHTML = Math.floor(caloriePerCount(FEED[feed])*100)/100;
+    document.getElementById("total_calorie_count").innerHTML = Math.floor(totalCalorieCount(FEED[feed]));
 
     //개별부
-    document.getElementById("activity_index").innerHTML = activity_Index;
-    document.getElementById("basal_metabolic").innerHTML = basalMetabolic(pet_type, weight);
-    document.getElementById("recommended_calories").innerHTML = recommendedCalories(pet_type, activity_Index, weight);
+    document.getElementById("activity_index").innerHTML = Math.floor(activity_Index);
+    document.getElementById("basal_metabolic").innerHTML = Math.floor(basalMetabolic(pet_type, weight));
+    document.getElementById("recommended_calories").innerHTML = Math.floor(recommendedCalories(pet_type, activity_Index, weight));
 
     let penemill_amount = 0;
     if(feed_type == "mixed"){
@@ -61,15 +61,15 @@ function makeResult() {
     else{
         penemill_amount = penemillAmount(pet_type, activity_Index, weight, FEED[feed]);
     }
-    document.getElementById("penemill_amount").innerHTML = penemill_amount;
-    document.getElementById("water_needs").innerHTML = waterNeeds(pet_type, weight);
+    document.getElementById("penemill_amount").innerHTML = Math.floor(penemill_amount);
+    document.getElementById("water_needs").innerHTML = Math.floor(waterNeeds(pet_type, weight));
 
 
 }
 
 //공통부
 function calorieCount(feed) {
-    return (feed.crude_protein * 3.5) * (feed.crude_fat * 8.5) * (feed.carbohydrate * 3.5);
+    return (feed.crude_protein * 3.5) + (feed.crude_fat * 8.5) + (feed.carbohydrate * 3.5);
 }
 
 function caloriePerCount(feed) {
