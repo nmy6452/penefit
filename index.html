@@ -3,6 +3,24 @@
     label {
         width: 100px;
     }
+    body {
+        text-align: center;
+    }
+    table {
+        margin-left:auto; 
+        margin-right:auto;
+        border: 1px solid;
+    }
+    .shadow {
+        margin-left:auto; 
+        opacity: 0.4
+    }
+    th {
+        width: 300px;
+    }
+    td{
+        width: 400px;
+    }
 </style>
 
 <head>
@@ -20,34 +38,33 @@
     </div>
     <div id="extra_feed" style="display:none;">
         <div>
-            <label for="extra_feed_Kcal">타사료 칼로리</label>
-            <input id="extra_feed_Kcal" type="number" />
+            <label for="extra_feed_kcal">타사료 칼로리</label>
+            <input id="extra_feed_kcal" value="3.1" type="number" />
         </div>
-        <!-- <div>
+        <div>
             <label for="extra_feed_amount">타사료 총중량</label>
-            <input id="extra_feed_amount" type="number" />
-        </div> -->
+            <input id="extra_feed_amount" value="80" type="number" />
+        </div>
     </div>
     <div>
         <label for="feed">페네밀</label>
         <select id="feed">
-            <option value="feed1">페네밀1</option>
-            <option value="feed2">페네밀2</option>
-            <option value="feed3">페네밀3</option>
-            <option value="feed4">페네밀4</option>
-            <option value="feed5">페네밀5</option>
+            <option value="feed1">페네밀 벨런스(100g)</option>
+            <option value="feed2">페네밀 벨런스(500g)</option>
+            <option value="feed3">페네밀 맛있는(100g)</option>
+            <option value="feed4">페네밀 맛있는(500g)</option>
+            <option value="feed5">페네밀 다이어트(100g)</option>
+            <option value="feed6">페네밀 다이어트(500g)</option>
         </select>
     </div>
-    <div>
+    <!-- <div>
         <label for="penemill_amount">페네밀 급여량</label>
         <input id="penemill_amount" type="number" />
-    </div>
+    </div> -->
     <div>
         <label for="pet_type">나의 반려동물</label>
-        <select id="pet_type">
-            <option value="dog">강아지</option>
-            <option value="cat">고양이</option>
-        </select>
+        <label><input type="radio" name="pet_type" onchange="petTypeManage()" value="dog" checked/>강아지</label>
+        <label><input type="radio" name="pet_type" onchange="petTypeManage()" value="cat"/>고양이</label>
     </div>
     <!-- 따로 보이게 작업하기 -->
     <div id="dog">
@@ -66,7 +83,7 @@
             <option value="ATHLETIC">운동량이 많고 활발한 성묘</option>
         </select>
     </div>
-    <div id="cat">
+    <div id="cat" style="display:none;">
         <label for="cat_activity_Index">반려묘 활동지수</label>
         <select id="cat_activity_Index">
             <option value="BABY">3 개월 미만</option>
@@ -85,57 +102,68 @@
     </div>
     <div>
         <label for="weight">체중</label>
-        <input id="weight" type="number" />
+        <input id="weight" value="3.5" type="number" />
     </div>
     <button onclick="makeResult()">계산하기</button>
 
-    <h2>결과</h2>
-    <p>산식은 참고로만 사용하세요.</p>
+    <h2>제품 정보</h2>
+    <!-- </form> -->
+    <div>
+        <div>
+            <table>
+                <tbody>
+                    <tr class="shadow">
+                        <!-- 1K 당 -->
+                        <!-- <th>제품 1Kg 당 칼로리</th> -->
+                        <th>제품 100g 당 칼로리</th>
+                        <td id="calorie_count"></td>
+                    </tr>
+                    <tr class="shadow">
+                        <th>단위 칼로리</th>
+                        <td id="calorie_per_count"></td>
+                    </tr>
+                    <tr class="shadow">
+                        <th>재품 총 칼로리(무게 고정 100)</th>
+                        <td id="total_calorie_count"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <h2>우리 아이는요~</h2>
+    <!-- </form> -->
+    <div>
+        <div>
+            <table>
+                <tbody>
+                    <tr class="shadow">
+                        <th>반려동물 활동지수</th>
+                        <td id="activity_index"></td>
+                    </tr>
+                    <tr>
+                        <th>*반려동물 기초 대사량</th>
+                        <td id="basal_metabolic"></td>
+                    </tr>
+                    <tr>
+                        <th>*빈려동물 하루 섭취 권장 칼로리</th>
+                        <td id="recommended_calories"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <h2>이만큼만 주세요</h2>
     <!-- </form> -->
     <div>
         <div>
             <table>
                 <tbody>
                     <tr>
-                        <!-- 1K 당 -->
-                        <th>제품 1Kg 당 칼로리</th>
-                        <th>제품 100g 당 칼로리</th>
-                        <td>산식: (조단백질*3.5)(조지방*8.5)(탄수화몰*3.5)</td>
-                        <td id="calorie_count"></td>
-                    </tr>
-                    <tr>
-                        <th>단위 칼로리</th>
-                        <td>산식: (조단백질*3.5)(조지방*8.5)(탄수화몰*3.5)/100</td>
-                        <td id="calorie_per_count"></td>
-                    </tr>
-                    <tr>
-                        <th>재품 총 칼로리(무게 고정 100)</th>
-                        <td>산식: (조단백질*3.5)(조지방*8.5)(탄수화몰*3.5)/100*무게</td>
-                        <td id="total_calorie_count"></td>
-                    </tr>
-                    <tr>
-                        <th>반려동물 활동지수</th>
-                        <td>산식: 표1 참고</td>
-                        <td id="activity_index"></td>
-                    </tr>
-                    <tr>
-                        <th>*반려동물 기초 대사량</th>
-                        <td>산식: ??</td>
-                        <td id="basal_metabolic"></td>
-                    </tr>
-                    <tr>
-                        <th>*빈려동물 하루 섭취 권장 칼로리</th>
-                        <td>산식: 기초 대사량 * 활동지수</td>
-                        <td id="recommended_calories"></td>
-                    </tr>
-                    <tr>
-                        <th>*사료 급여량</th>
-                        <td>산식: 권장 칼로리 / 단위 칼로리</td>
-                        <td id="feed_amount"></td>
+                        <th>*페네밀 급여량</th>
+                        <td id="penemill_amount"></td>
                     </tr>
                     <tr>
                         <th>*하루 수분 필요량</th>
-                        <td>산식: (체중^0.75) * 132</td>
                         <td id="water_needs"></td>
                     </tr>
                 </tbody>
