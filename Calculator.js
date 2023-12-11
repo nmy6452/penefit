@@ -53,6 +53,10 @@ function makeResult() {
     let penemill_amount = 0;
     if(feed_type == "mixed"){
         penemill_amount = (feedAmount(pet_type, activity_Index, weight, extra_feed_kcal, extra_feed_amount) / caloriePerCount(FEED[feed]));
+        if(penemill_amount <= 0){
+            alert("급여 칼로리가 권장 칼로리를 초과했습니다.");
+            penemill_amount = "권장 칼로리 초과."
+        }
     }
     else{
         penemill_amount = penemillAmount(pet_type, activity_Index, weight, FEED[feed]);
