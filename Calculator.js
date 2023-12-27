@@ -154,6 +154,6 @@ function waterNeeds(pet_type, weight) {
         return Math.pow(weight, 0.75) * 132;
     }
     else if (pet_type == "cat") {
-        return Math.pow(weight, 0.75) * 70;
+        return Math.pow(weight, 0.75) * 80;
     }
 }
