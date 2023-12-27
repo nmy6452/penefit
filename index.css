@@ -1,0 +1,32 @@
+.cal_title{
+    color: var(--black, #000);
+text-align: center;
+font-family: NanumSquare Neo OTF;
+font-size: 30px;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
+letter-spacing: -1.5px;
+}
+
+.cal_descript{
+    color: var(--black, #000);
+    text-align: center;
+    font-family: NanumSquare Neo OTF;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.cal_image
+{
+    text-align: center;
+}
+
+.cal_input_window{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}

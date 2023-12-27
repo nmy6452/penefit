@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<style>
+<!-- <style>
     label {
         width: 100px;
     }
@@ -21,14 +21,49 @@
     td{
         width: 400px;
     }
-</style>
+</style> -->
 
 <head>
     <script src="./Calculator.js"></script>
     <script src="./UiManager.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css" />
 </head>
 
 <body>
+    <div id="petFeedCal">
+        <div class="cal_title">사료 급여량 계산기</div>
+        <div class="cal_descript">아이에게 맞는 권장 급여량과 급수량을 페네핏이 알려드릴게요 :)</div>
+        <div class="cal_image"><img src="cal_img.png" alt="My Image" width="276px" height="252px"></div>
+        <div class="cal_input_window">
+            <table>
+                <tbody>
+                    <tr>
+                        <th><div class="cal_input_title">사료급여방식</div></th>
+                        <td><div class="cal_input_value"></div></td>
+                    </tr>
+                    <tr>
+                        <th><div class="cal_input_title">페네밀</div></th>
+                        <td><div class="cal_input_value"></div></td>
+                    </tr>
+                    <tr>
+                        <th><div class="cal_input_title">나의 반려동물</div></th>
+                        <td><div class="cal_input_value"></div></td>
+                    </tr>
+                    <tr>
+                        <th><div class="cal_input_title">활동지수</div></th>
+                        <td><div class="cal_input_value"></div></td>
+                    </tr>
+                    <tr>
+                        <th><div class="cal_input_title">체중</div></th>
+                        <td><div class="cal_input_value"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <input type="button" title="계산하기"/>
+            </div>
+        </div>
+    </div>
     <h2>입력</h2>
     <!-- <form> -->
     <div>
