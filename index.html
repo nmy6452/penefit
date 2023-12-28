@@ -35,32 +35,106 @@
         <div class="cal_descript">아이에게 맞는 권장 급여량과 급수량을 페네핏이 알려드릴게요 :)</div>
         <div class="cal_image"><img src="cal_img.png" alt="My Image" width="276px" height="252px"></div>
         <div class="cal_input_window">
-            <table>
+            <table class="cal_input_tbl">
                 <tbody>
                     <tr>
-                        <th><div class="cal_input_title">사료급여방식</div></th>
-                        <td><div class="cal_input_value"></div></td>
+                        <th>
+                            <label class="cal_input_title">사료급여방식</label>
+                        </th>
+                        <td>
+                            <div class="cal_input_value">
+                                <label><input type="radio" name="feed_type" onchange="feedTypeManage()" value="single"
+                                        checked />페네밀만</label>
+                                <label><input type="radio" name="feed_type" onchange="feedTypeManage()"
+                                        value="mixed" />페네밀로 갈아타기</label>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <th><div class="cal_input_title">페네밀</div></th>
-                        <td><div class="cal_input_value"></div></td>
+                        <th>
+                            <label class="cal_input_title">페네밀</label>
+                        </th>
+                        <td>
+                            <div class="cal_input_value">
+                                <select id="feed">
+                                    <option value="feed1">페네밀 벨런스(100g)</option>
+                                    <option value="feed2">페네밀 벨런스(500g)</option>
+                                    <option value="feed3">페네밀 맛있는(100g)</option>
+                                    <option value="feed4">페네밀 맛있는(500g)</option>
+                                    <option value="feed5">페네밀 다이어트(100g)</option>
+                                    <option value="feed6">페네밀 다이어트(500g)</option>
+                                </select>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <th><div class="cal_input_title">나의 반려동물</div></th>
-                        <td><div class="cal_input_value"></div></td>
+                        <th>
+                            <label class="cal_input_title">나의 반려동물</label>
+                        </th>
+                        <td>
+                            <div class="cal_input_value">
+                                <label><input type="radio" name="pet_type" onchange="petTypeManage()" value="dog"
+                                        checked />강아지</label>
+                                <label><input type="radio" name="pet_type" onchange="petTypeManage()"
+                                        value="cat" />고양이</label>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <th><div class="cal_input_title">활동지수</div></th>
-                        <td><div class="cal_input_value"></div></td>
+                        <th>
+                            <label class="cal_input_title">활동지수</label>
+                        </th>
+                        <td>
+                            <div class="cal_input_value">
+                                <div id="dog">
+                                    <select id="dog_activity_Index">
+                                        <option value="BABY">4 개월 이하</option>
+                                        <option value="TEENAGER">5개월 이상 12개월 미만</option>
+                                        <option value="PREGNANT">임신</option>
+                                        <option value="LACTATION">수유</option>
+                                        <option value="OLD">노령</option>
+                                        <option value="ELDERLY">고령</option>
+                                        <option value="FAT">체중 감량이 필요한</option>
+                                        <option value="CHUBBY"> 20% 비만 미만</option>
+                                        <option value="UNNEUTERED">중성화수술을 받지 않은 성묘</option>
+                                        <option value="NEUTERED">중성화수술을 받은 성묘</option>
+                                        <option value="ATHLETIC">운동량이 많고 활발한 성묘</option>
+                                    </select>
+                                </div>
+                                <div id="cat" style="display:none;">
+                                    <select id="cat_activity_Index">
+                                        <option value="BABY">3 개월 미만</option>
+                                        <option value="JUNIOR">4개월 이상 6개월 미만</option>
+                                        <option value="TEENAGER"> 7개월 이상 12개월 미만</option>
+                                        <option value="PREGNANT">임신</option>
+                                        <option value="LACTATION">수유</option>
+                                        <option value="OLD">노령</option>
+                                        <option value="ELDERLY">고령</option>
+                                        <option value="FAT">체중 감량이 필요한</option>
+                                        <option value="CHUBBY"> 20% 비만 미만</option>
+                                        <option value="UNNEUTERED">중성화수술을 받지 않은 성묘</option>
+                                        <option value="NEUTERED">중성화수술을 받은 성묘</option>
+                                        <option value="ATHLETIC">운동량이 많고 활발한 성묘</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <th><div class="cal_input_title">체중</div></th>
-                        <td><div class="cal_input_value"></div></td>
+                        <th>
+                            <label class="cal_input_title">체중</label>
+                        </th>
+                        <td>
+                            <div class="cal_input_value">
+                                <input id="weight" value="3.5" type="number" />
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
             <div>
-                <input type="button" title="계산하기"/>
+                <!-- 이모티콘 교체 -->
+                <button class="cal_btn" onclick="makeResult()">계산하기🐾</button>
             </div>
         </div>
     </div>
@@ -68,8 +142,8 @@
     <!-- <form> -->
     <div>
         <label for="feed_type">사료 급여방식</label>
-        <label><input type="radio" name="feed_type" onchange="feedTypeManage()" value="single" checked/>페네밀만</label>
-        <label><input type="radio" name="feed_type" onchange="feedTypeManage()" value="mixed"/>페네밀로 갈아타기</label>
+        <label><input type="radio" name="feed_type" onchange="feedTypeManage()" value="single" checked />페네밀만</label>
+        <label><input type="radio" name="feed_type" onchange="feedTypeManage()" value="mixed" />페네밀로 갈아타기</label>
     </div>
     <div id="extra_feed" style="display:none;">
         <div>
@@ -98,10 +172,9 @@
     </div> -->
     <div>
         <label for="pet_type">나의 반려동물</label>
-        <label><input type="radio" name="pet_type" onchange="petTypeManage()" value="dog" checked/>강아지</label>
-        <label><input type="radio" name="pet_type" onchange="petTypeManage()" value="cat"/>고양이</label>
+        <label><input type="radio" name="pet_type" onchange="petTypeManage()" value="dog" checked />강아지</label>
+        <label><input type="radio" name="pet_type" onchange="petTypeManage()" value="cat" />고양이</label>
     </div>
-    <!-- 따로 보이게 작업하기 -->
     <div id="dog">
         <label for="dog_activity_Index">반려견 활동지수</label>
         <select id="dog_activity_Index">
@@ -139,7 +212,7 @@
         <label for="weight">체중</label>
         <input id="weight" value="3.5" type="number" />
     </div>
-    <button onclick="makeResult()">계산하기</button>
+    <button onclick="makeResult()">계산하기🐾</button>
 
     <h2>제품 정보</h2>
     <!-- </form> -->

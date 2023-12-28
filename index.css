@@ -1,15 +1,15 @@
-.cal_title{
+.cal_title {
     color: var(--black, #000);
-text-align: center;
-font-family: NanumSquare Neo OTF;
-font-size: 30px;
-font-style: normal;
-font-weight: 800;
-line-height: normal;
-letter-spacing: -1.5px;
+    text-align: center;
+    font-family: NanumSquare Neo OTF;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -1.5px;
 }
 
-.cal_descript{
+.cal_descript {
     color: var(--black, #000);
     text-align: center;
     font-family: NanumSquare Neo OTF;
@@ -19,14 +19,67 @@ letter-spacing: -1.5px;
     line-height: normal;
 }
 
-.cal_image
-{
+.cal_image {
     text-align: center;
 }
 
-.cal_input_window{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+.cal_input_window {
+}
+
+.cal_input_tbl {
+    /* display: inline-flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* gap: 5px; */
+    margin: auto;
+}
+
+.cal_input_tbl th {
+    text-align: right;
+    padding: 0px 10px 0px 0px;
+}
+
+.cal_input_tbl th>label {
+    color: var(--green-main, #03B569);
+    text-align: right;
+    font-family: NanumSquare Neo OTF;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -0.75px;
+}
+
+.cal_input_tbl td>div {
+    color: var(--black, #000);
+    font-family: NanumSquare Neo OTF;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.75px;
+}
+.cal_input_tbl td>div select {
+    width: 200px;
+}
+
+.cal_input_tbl td>div input[type="number"] {
+    width: 200px;
+}
+
+.cal_btn {
+    width: 100px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: var(--light-grey, #DDD);
+    color: var(--black, #000);
+    text-align: center;
+    font-family: NanumSquare Neo OTF;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.75px;
+    border: none
 }
