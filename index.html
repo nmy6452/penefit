@@ -50,6 +50,22 @@
                             </div>
                         </td>
                     </tr>
+                    <tr class="extra_feed" style="display: none;">
+                        <th>
+                            <label for="extra_feed_kcal">타사료 칼로리 1Kg당</label>
+                        </th>
+                        <td>
+                            <input id="extra_feed_kcal" value="3.1" type="number" />
+                        </td>
+                    </tr>
+                    <tr class="extra_feed" style="display: none;">
+                        <th>
+                            <label for="extra_feed_amount">타사료 총중량</label>
+                        </th>
+                        <td>
+                            <input id="extra_feed_amount" value="80" type="number" />
+                        </td>
+                    </tr>
                     <tr>
                         <th>
                             <label class="cal_input_title">페네밀</label>
@@ -132,151 +148,71 @@
                     </tr>
                 </tbody>
             </table>
-            <div>
+            <div style="text-align: center;">
                 <!-- 이모티콘 교체 -->
                 <button class="cal_btn" onclick="makeResult()">계산하기🐾</button>
             </div>
         </div>
     </div>
-    <h2>입력</h2>
-    <!-- <form> -->
-    <div>
-        <label for="feed_type">사료 급여방식</label>
-        <label><input type="radio" name="feed_type" onchange="feedTypeManage()" value="single" checked />페네밀만</label>
-        <label><input type="radio" name="feed_type" onchange="feedTypeManage()" value="mixed" />페네밀로 갈아타기</label>
-    </div>
-    <div id="extra_feed" style="display:none;">
-        <div>
-            <label for="extra_feed_kcal">타사료 칼로리 1Kg당</label>
-            <input id="extra_feed_kcal" value="3.1" type="number" />
+    <div class="info_box" style="display: none;">
+        <div class="info_box_wrap">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>
+                            <div>우리아이 기초 대사량</div>
+                        </th>
+                        <td>
+                            <div id="basal_metabolic">계산값</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div>하루 섭취 권장 칼로리(Kcal)</div>
+                        </th>
+                        <td>
+                            <div id="recommended_calories">계산값</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="add_info">
+                <ul>
+                    <li>주의사항 뭐시기 저시기</li>
+                    <li>주의사항 뭐시기 저시기</li>
+                </ul>
+            </div>
         </div>
-        <div>
-            <label for="extra_feed_amount">타사료 총중량</label>
-            <input id="extra_feed_amount" value="80" type="number" />
-        </div>
     </div>
-    <div>
-        <label for="feed">페네밀</label>
-        <select id="feed">
-            <option value="feed1">페네밀 벨런스(100g)</option>
-            <option value="feed2">페네밀 벨런스(500g)</option>
-            <option value="feed3">페네밀 맛있는(100g)</option>
-            <option value="feed4">페네밀 맛있는(500g)</option>
-            <option value="feed5">페네밀 다이어트(100g)</option>
-            <option value="feed6">페네밀 다이어트(500g)</option>
-        </select>
-    </div>
-    <!-- <div>
-        <label for="penemill_amount">페네밀 급여량</label>
-        <input id="penemill_amount" type="number" />
-    </div> -->
-    <div>
-        <label for="pet_type">나의 반려동물</label>
-        <label><input type="radio" name="pet_type" onchange="petTypeManage()" value="dog" checked />강아지</label>
-        <label><input type="radio" name="pet_type" onchange="petTypeManage()" value="cat" />고양이</label>
-    </div>
-    <div id="dog">
-        <label for="dog_activity_Index">반려견 활동지수</label>
-        <select id="dog_activity_Index">
-            <option value="BABY">4 개월 이하</option>
-            <option value="TEENAGER">5개월 이상 12개월 미만</option>
-            <option value="PREGNANT">임신</option>
-            <option value="LACTATION">수유</option>
-            <option value="OLD">노령</option>
-            <option value="ELDERLY">고령</option>
-            <option value="FAT">체중 감량이 필요한</option>
-            <option value="CHUBBY"> 20% 비만 미만</option>
-            <option value="UNNEUTERED">중성화수술을 받지 않은 성묘</option>
-            <option value="NEUTERED">중성화수술을 받은 성묘</option>
-            <option value="ATHLETIC">운동량이 많고 활발한 성묘</option>
-        </select>
-    </div>
-    <div id="cat" style="display:none;">
-        <label for="cat_activity_Index">반려묘 활동지수</label>
-        <select id="cat_activity_Index">
-            <option value="BABY">3 개월 미만</option>
-            <option value="JUNIOR">4개월 이상 6개월 미만</option>
-            <option value="TEENAGER"> 7개월 이상 12개월 미만</option>
-            <option value="PREGNANT">임신</option>
-            <option value="LACTATION">수유</option>
-            <option value="OLD">노령</option>
-            <option value="ELDERLY">고령</option>
-            <option value="FAT">체중 감량이 필요한</option>
-            <option value="CHUBBY"> 20% 비만 미만</option>
-            <option value="UNNEUTERED">중성화수술을 받지 않은 성묘</option>
-            <option value="NEUTERED">중성화수술을 받은 성묘</option>
-            <option value="ATHLETIC">운동량이 많고 활발한 성묘</option>
-        </select>
-    </div>
-    <div>
-        <label for="weight">체중</label>
-        <input id="weight" value="3.5" type="number" />
-    </div>
-    <button onclick="makeResult()">계산하기🐾</button>
 
-    <h2>제품 정보</h2>
-    <!-- </form> -->
-    <div>
-        <div>
-            <table>
-                <tbody>
-                    <tr class="shadow">
-                        <!-- 1K 당 -->
-                        <!-- <th>제품 1Kg 당 칼로리</th> -->
-                        <th>제품 100g 당 칼로리(kcal)</th>
-                        <td id="calorie_count"></td>
-                    </tr>
-                    <tr class="shadow">
-                        <th>1g 칼로리(kcal)</th>
-                        <td id="calorie_per_count"></td>
-                    </tr>
-                    <tr class="shadow">
-                        <th>재품 총 칼로리(kcal)</th>
-                        <td id="total_calorie_count"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <h2>우리 아이는요~</h2>
-    <!-- </form> -->
-    <div>
-        <div>
-            <table>
-                <tbody>
-                    <tr class="shadow">
-                        <th>반려동물 활동지수</th>
-                        <td id="activity_index"></td>
-                    </tr>
-                    <tr>
-                        <th>*반려동물 기초 대사량</th>
-                        <td id="basal_metabolic"></td>
-                    </tr>
-                    <tr>
-                        <th>*빈려동물 하루 섭취 권장 칼로리(kcal)</th>
-                        <td id="recommended_calories"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <h2>이만큼만 주세요</h2>
-    <p>정확한 수치는 아닐 수 있습니다.</p>
-    <!-- </form> -->
-    <div>
-        <div>
+    <div class="info_box" style="display: none;">
+        <div class="info_box_wrap">
             <table>
                 <tbody>
                     <tr>
-                        <th>*페네밀 급여량(g)</th>
-                        <td id="penemill_amount"></td>
+                        <th>
+                            <div>페네밀 급여량 (g)</div>
+                        </th>
+                        <td>
+                            <div id="penemill_amount">계산값</div>
+                        </td>
                     </tr>
                     <tr>
-                        <th>*하루 수분 필요량(g)</th>
-                        <td id="water_needs"></td>
+                        <th>
+                            <div>하루 수분 필요량 (g)</div>
+                        </th>
+                        <td>
+                            <div id="water_needs">계산값</div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
+            <div class="add_info">
+                <ul>
+                    <li>권장 급여량은 OOO기준으로 계산된 참고용으로, 아이의 실제 현재 상태에 맞춰 조절하여 급여해주세요.</li>
+                    <li>주의사항 뭐시기 저시기</li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>

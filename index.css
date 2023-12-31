@@ -24,6 +24,7 @@
 }
 
 .cal_input_window {
+    margin-bottom: 30px;
 }
 
 .cal_input_tbl {
@@ -32,11 +33,13 @@
     /* align-items: center; */
     /* gap: 5px; */
     margin: auto;
+    margin-bottom: 30px;
 }
 
 .cal_input_tbl th {
     text-align: right;
     padding: 0px 10px 0px 0px;
+    min-width: 200px;
 }
 
 .cal_input_tbl th>label {
@@ -50,6 +53,10 @@
     letter-spacing: -0.75px;
 }
 
+.cal_input_tbl td {
+    min-width: 300px;
+}
+
 .cal_input_tbl td>div {
     color: var(--black, #000);
     font-family: NanumSquare Neo OTF;
@@ -59,6 +66,7 @@
     line-height: normal;
     letter-spacing: -0.75px;
 }
+
 .cal_input_tbl td>div select {
     width: 200px;
 }
@@ -81,5 +89,82 @@
     font-weight: 700;
     line-height: normal;
     letter-spacing: -0.75px;
-    border: none
+    border: none;
+}
+
+.cal_btn:active {
+    width: 100px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: var(--green-main, #03B569);
+    color: var(--white, #FFF);
+    text-align: center;
+    font-family: NanumSquare Neo OTF;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.75px;
+}
+
+.info_box {
+    width: 800px;
+    height: 250px;
+    flex-shrink: 0;
+    border-radius: 100px;
+    background: rgba(245, 245, 245, 0.50);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 70px;
+}
+.info_box_wrap{
+    width: 700px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    margin: 40px 50px 40px 50px;
+}
+
+.info_box_wrap table{
+    margin: auto;
+}
+
+.info_box_wrap th>div {
+    color: var(--black, #000);
+    text-align: right;
+    font-family: NanumSquare Neo OTF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -0.4px;
+    margin-right: 30px;
+}
+
+.info_box_wrap td>div {
+    width: 400px;
+    color: var(--green-main, #03B569);
+    font-family: NanumSquare Neo OTF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -0.4px;
+}
+
+.info_box_wrap .add_info{
+    width: 100%;
+}
+.info_box_wrap .add_info li{
+    color: var(--black, #000);
+    font-family: NanumSquare Neo OTF;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.32px;
+    margin-bottom: 5px;
 }
