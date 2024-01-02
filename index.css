@@ -118,7 +118,8 @@
     margin-right: auto;
     margin-bottom: 70px;
 }
-.info_box_wrap{
+
+.info_box_wrap {
     width: 500px;
     display: inline-flex;
     flex-direction: column;
@@ -128,7 +129,7 @@
     margin: 40px 150px 40px 150px;
 }
 
-.info_box_wrap table{
+.info_box_wrap table {
     margin: auto;
 }
 
@@ -169,10 +170,11 @@
     text-align: left;
 }
 
-.info_box_wrap .add_info{
+.info_box_wrap .add_info {
     width: 100%;
 }
-.info_box_wrap .add_info li{
+
+.info_box_wrap .add_info li {
     color: var(--black, #000);
     font-family: NanumSquare Neo OTF;
     font-size: 12px;
@@ -182,4 +184,103 @@
     letter-spacing: -0.32px;
     margin-bottom: 5px;
     white-space: pre-line;
+}
+
+/* custom_select */
+/* reset */
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* design */
+
+.selectbox {
+    width: 310px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: var(--white, #FFF);
+    box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.10);
+    border: none;
+    box-sizing: border-box;
+    font-family: NanumSquare Neo OTF;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: normal;
+    appearance: none;
+    text-align: left;
+    position: relative;
+}
+
+.selectbox.on {
+    border: 1px solid #03B569;
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: 3px solid #F8E4FF;
+    border-radius: 10px;
+}
+
+.selectbox .sel_arrow{
+    margin: 5px 5px;
+    float:right;
+    color: #03B569;
+}
+
+.selectbox.on .sel_arrow{
+    float:right;
+    transform: scaleY(-1);
+    transition: .3s;
+    color: #03B569;
+
+}
+
+.listbox{
+    position: absolute; /* 새로운 레이어가 다른 요소 위에 위치할 수 있도록 함 */
+    width: 310px;
+    list-style: none;
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    margin-top: 2px;
+    display: none;
+}
+
+.listbox.on{
+    position: absolute; /* 새로운 레이어가 다른 요소 위에 위치할 수 있도록 함 */
+    width: 310px;
+    list-style: none;
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    margin-top: 2px;
+    display: block;
+}
+
+.list {
+    width: 290px;
+    border: none;
+    background-color: #FFFFFF;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 7px 10px;
+    margin: 5px 7px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.list:focus {
+    background: #03b56856;
+    width: 290px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    text-align: left;
 }

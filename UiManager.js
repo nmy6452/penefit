@@ -45,3 +45,23 @@ function displayInfoBox(is_display) {
         }
     }
 }
+
+window.onload = function () {
+    //셀렉트 박스 클릭시 발생 이벤트
+    document.querySelectorAll('.selectbox').forEach((target) =>
+        target.addEventListener("click", function(){
+            if(target.className.includes('on')){
+                target.classList.remove('on');
+                target.nextElementSibling.classList.remove('on')
+            }
+            else{
+                target.classList.add('on');
+                target.nextElementSibling.classList.add('on')
+            }
+        }));
+    //
+    // document.querySelectorAll('.selectbox').forEach((target) =>
+    // target.addEventListener("click", function(){
+    //     console.log(target);
+    // }));
+}
