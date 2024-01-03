@@ -20,41 +20,45 @@ fetch('./feed.json')
 
 
 function makeResult() {
-    let feed_type = document.querySelector('input[name="feed_type"]:checked').value;
-    let pet_type = document.querySelector('input[name="pet_type"]:checked').value;
-    let dog_activity_Index = document.getElementById("dog_activity_Index").dataset.val;
-    let cat_activity_Index = document.getElementById("cat_activity_Index").dataset.val;
-    let feed = document.getElementById("feed").dataset.val;
-    let weight = document.getElementById("weight").value;
-    let extra_feed_kcal = document.getElementById("extra_feed_kcal").value;
-    let extra_feed_amount = document.getElementById("extra_feed_amount").value / 1000;
-    // let penemill_amount = document.getElementById("penemill_amount").value;
-    let activity_Index = null;
-    if (pet_type == "dog") {
-        activity_Index = activityIndex(pet_type, dog_activity_Index);
-    }
-    else {
-        activity_Index = activityIndex(pet_type, cat_activity_Index);
-    }
-
-    displayInfoBox(true);
-    document.getElementById("basal_metabolic").innerHTML = Math.floor(basalMetabolic(pet_type, weight));
-    document.getElementById("recommended_calories").innerHTML = Math.floor(recommendedCalories(pet_type, activity_Index, weight));
-
-    let penemill_amount = 0;
-    if(feed_type == "mixed"){
-        penemill_amount = (feedAmount(pet_type, activity_Index, weight, extra_feed_kcal, extra_feed_amount) / caloriePerCount(FEED[feed]));
-        if(penemill_amount <= 0){
-            alert("급여 칼로리가 권장 칼로리를 초과했습니다.");
+    try{
+        let feed_type = document.querySelector('input[name="feed_type"]:checked').value;
+        let pet_type = document.querySelector('input[name="pet_type"]:checked').value;
+        let dog_activity_Index = document.getElementById("dog_activity_Index").dataset.val;
+        let cat_activity_Index = document.getElementById("cat_activity_Index").dataset.val;
+        let feed = document.getElementById("feed").dataset.val;
+        let weight = document.getElementById("weight").value;
+        let extra_feed_kcal = document.getElementById("extra_feed_kcal").value;
+        let extra_feed_amount = document.getElementById("extra_feed_amount").value / 1000;
+        // let penemill_amount = document.getElementById("penemill_amount").value;
+        let activity_Index = null;
+        if (pet_type == "dog") {
+            activity_Index = activityIndex(pet_type, dog_activity_Index);
         }
+        else {
+            activity_Index = activityIndex(pet_type, cat_activity_Index);
+        }
+    
+        displayInfoBox(true);
+        document.getElementById("basal_metabolic").innerHTML = Math.floor(basalMetabolic(pet_type, weight));
+        document.getElementById("recommended_calories").innerHTML = Math.floor(recommendedCalories(pet_type, activity_Index, weight));
+    
+        let penemill_amount = 0;
+        if(feed_type == "mixed"){
+            penemill_amount = (feedAmount(pet_type, activity_Index, weight, extra_feed_kcal, extra_feed_amount) / caloriePerCount(FEED[feed]));
+            if(penemill_amount <= 0){
+                alert("급여 칼로리가 권장 칼로리를 초과했습니다.");
+            }
+        }
+        else{
+            penemill_amount = penemillAmount(pet_type, activity_Index, weight, FEED[feed]);
+        }
+        document.getElementById("penemill_amount").innerHTML = Math.floor(penemill_amount);
+        document.getElementById("water_needs").innerHTML = Math.floor(waterNeeds(pet_type, weight));
     }
-    else{
-        penemill_amount = penemillAmount(pet_type, activity_Index, weight, FEED[feed]);
+    catch(err){
+        alert("입력 항목을 빠짐없이 기입해주세요.");
     }
-    document.getElementById("penemill_amount").innerHTML = Math.floor(penemill_amount);
-    document.getElementById("water_needs").innerHTML = Math.floor(waterNeeds(pet_type, weight));
-
-
+    
 }
 
 //공통부
