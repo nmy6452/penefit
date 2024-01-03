@@ -71,28 +71,19 @@
                             <label class="cal_input_title">페네밀</label>
                         </th>
                         <td>
-                            <div class="cal_input_value">
+                            <div class="cal_input_value" id="feed">
                                 <button class="selectbox">
-                                    <span>페네밀 고르기</span>
+                                    <span>선택하세요</span>
                                     <img class="sel_arrow" src="./img/arrow1.svg"/>
                                 </button>
                                 <ul class="listbox" id="listbox">
-                                    <li><button class="list">페네밀 벨런스(100g)</button></li>
-                                    <li><button class="list">페네밀 벨런스(500g)</button></li>
-                                    <li><button class="list">페네밀 맛있는(100g)</button></li>
-                                    <li><button class="list">페네밀 맛있는(500g)</button></li>
-                                    <li><button class="list">페네밀 다이어트(100g)</button></li>
-                                    <li><button class="list">페네밀 다이어트(500g)</button></li>
+                                    <li><button class="list" data-val="feed1">페네밀 벨런스(100g)</button></li>
+                                    <li><button class="list" data-val="feed2">페네밀 벨런스(500g)</button></li>
+                                    <li><button class="list" data-val="feed3">페네밀 맛있는(100g)</button></li>
+                                    <li><button class="list" data-val="feed4">페네밀 맛있는(500g)</button></li>
+                                    <li><button class="list" data-val="feed5">페네밀 다이어트(100g)</button></li>
+                                    <li><button class="list" data-val="feed6">페네밀 다이어트(500g)</button></li>
                                 </ul>
-
-                                <!-- <select id="feed">
-                                    <option value="feed1">페네밀 벨런스(100g)</option>
-                                    <option value="feed2">페네밀 벨런스(500g)</option>
-                                    <option value="feed3">페네밀 맛있는(100g)</option>
-                                    <option value="feed4">페네밀 맛있는(500g)</option>
-                                    <option value="feed5">페네밀 다이어트(100g)</option>
-                                    <option value="feed6">페네밀 다이어트(500g)</option>
-                                </select> -->
                             </div>
                         </td>
                     </tr>
@@ -114,38 +105,43 @@
                             <label class="cal_input_title">활동지수</label>
                         </th>
                         <td>
-                            <div class="cal_input_value">
-                                <div id="dog">
-                                    <select id="dog_activity_Index">
-                                        <option value="BABY">4 개월 이하</option>
-                                        <option value="TEENAGER">5개월 이상 12개월 미만</option>
-                                        <option value="PREGNANT">임신</option>
-                                        <option value="LACTATION">수유</option>
-                                        <option value="OLD">노령</option>
-                                        <option value="ELDERLY">고령</option>
-                                        <option value="FAT">체중 감량이 필요한</option>
-                                        <option value="CHUBBY"> 20% 비만 미만</option>
-                                        <option value="UNNEUTERED">중성화수술을 받지 않은 성묘</option>
-                                        <option value="NEUTERED">중성화수술을 받은 성묘</option>
-                                        <option value="ATHLETIC">운동량이 많고 활발한 성묘</option>
-                                    </select>
-                                </div>
-                                <div id="cat" style="display:none;">
-                                    <select id="cat_activity_Index">
-                                        <option value="BABY">3 개월 미만</option>
-                                        <option value="JUNIOR">4개월 이상 6개월 미만</option>
-                                        <option value="TEENAGER"> 7개월 이상 12개월 미만</option>
-                                        <option value="PREGNANT">임신</option>
-                                        <option value="LACTATION">수유</option>
-                                        <option value="OLD">노령</option>
-                                        <option value="ELDERLY">고령</option>
-                                        <option value="FAT">체중 감량이 필요한</option>
-                                        <option value="CHUBBY"> 20% 비만 미만</option>
-                                        <option value="UNNEUTERED">중성화수술을 받지 않은 성묘</option>
-                                        <option value="NEUTERED">중성화수술을 받은 성묘</option>
-                                        <option value="ATHLETIC">운동량이 많고 활발한 성묘</option>
-                                    </select>
-                                </div>
+                            <div class="cal_input_value" id="dog_activity_Index">
+                                <button class="selectbox">
+                                    <span>선택하세요</span>
+                                    <img class="sel_arrow" src="./img/arrow1.svg"/>
+                                </button>
+                                <ul class="listbox">
+                                    <li><button class="list" data-val="BABY">4 개월 이하</button></li>
+                                    <li><button class="list" data-val="TEENAGER">5개월 이상 12개월 미만</button></li>
+                                    <li><button class="list" data-val="PREGNANT">임신</button></li>
+                                    <li><button class="list" data-val="LACTATION">수유</button></li>
+                                    <li><button class="list" data-val="OLD">노령</button></li>
+                                    <li><button class="list" data-val="ELDERLY">고령</button></li>
+                                    <li><button class="list" data-val="FAT">체중 감량이 필요한</button></li>
+                                    <li><button class="list" data-val="CHUBBY">20% 비만 미만</button></li>
+                                    <li><button class="list" data-val="UNNEUTERED">중성화수술을 받지 않은 성견</button></li>
+                                    <li><button class="list" data-val="NEUTERED">중성화수술을 받은 성견</button></li>
+                                    <li><button class="list" data-val="ATHLETIC">운동량이 많고 활발한 성견</button></li>
+                                </ul>
+                            </div>
+                            <div class="cal_input_value" id="cat_activity_Index" style="display:none;">
+                                <button class="selectbox">
+                                    <span>선택하세요</span>
+                                    <img class="sel_arrow" src="./img/arrow1.svg"/>
+                                </button>
+                                <ul class="listbox">
+                                    <li><button class="list" data-val="BABY">4 개월 이하</button></li>
+                                    <li><button class="list" data-val="JUNIOR">5개월 이상 12개월 미만</button></li>
+                                    <li><button class="list" data-val="PREGNANT">임신</button></li>
+                                    <li><button class="list" data-val="LACTATION">수유</button></li>
+                                    <li><button class="list" data-val="OLD">노령</button></li>
+                                    <li><button class="list" data-val="ELDERLY">고령</button></li>
+                                    <li><button class="list" data-val="FAT">체중 감량이 필요한</button></li>
+                                    <li><button class="list" data-val="CHUBBY">20% 비만 미만</button></li>
+                                    <li><button class="list" data-val="UNNEUTERED">중성화수술을 받지 않은 성묘</button></li>
+                                    <li><button class="list" data-val="NEUTERED">중성화수술을 받은 성묘</button></li>
+                                    <li><button class="list" data-val="ATHLETIC">운동량이 많고 활발한 성묘</button></li>
+                                </ul>
                             </div>
                         </td>
                     </tr>

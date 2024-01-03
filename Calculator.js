@@ -20,12 +20,11 @@ fetch('./feed.json')
 
 
 function makeResult() {
-    displayInfoBox(true);
     let feed_type = document.querySelector('input[name="feed_type"]:checked').value;
     let pet_type = document.querySelector('input[name="pet_type"]:checked').value;
-    let dog_activity_Index = document.getElementById("dog_activity_Index").value;
-    let cat_activity_Index = document.getElementById("cat_activity_Index").value;
-    let feed = document.getElementById("feed").value;
+    let dog_activity_Index = document.getElementById("dog_activity_Index").dataset.val;
+    let cat_activity_Index = document.getElementById("cat_activity_Index").dataset.val;
+    let feed = document.getElementById("feed").dataset.val;
     let weight = document.getElementById("weight").value;
     let extra_feed_kcal = document.getElementById("extra_feed_kcal").value;
     let extra_feed_amount = document.getElementById("extra_feed_amount").value / 1000;
@@ -37,16 +36,8 @@ function makeResult() {
     else {
         activity_Index = activityIndex(pet_type, cat_activity_Index);
     }
-    // alert(activity_Index);
-    // console.log(FEED[feed]);
 
-    //공통부
-    // document.getElementById("calorie_count").innerHTML = Math.floor(calorieCount(FEED[feed]));
-    // document.getElementById("calorie_per_count").innerHTML = Math.floor(caloriePerCount(FEED[feed])*100)/100;
-    // document.getElementById("total_calorie_count").innerHTML = Math.floor(totalCalorieCount(FEED[feed]));
-
-    //개별부
-    // document.getElementById("activity_index").innerHTML = Math.floor(activity_Index);
+    displayInfoBox(true);
     document.getElementById("basal_metabolic").innerHTML = Math.floor(basalMetabolic(pet_type, weight));
     document.getElementById("recommended_calories").innerHTML = Math.floor(recommendedCalories(pet_type, activity_Index, weight));
 

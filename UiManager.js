@@ -19,12 +19,12 @@ function feedTypeManage() {
 function petTypeManage() {
     var pet_type = document.querySelector('input[name="pet_type"]:checked').value;
     if (pet_type == "dog") {
-        document.getElementById("cat").setAttribute('style', "display:none;");
-        document.getElementById("dog").removeAttribute('style');
+        document.getElementById("cat_activity_Index").setAttribute('style', "display:none;");
+        document.getElementById("dog_activity_Index").removeAttribute('style');
     }
     else if (pet_type == "cat") {
-        document.getElementById("dog").setAttribute('style', "display:none;");
-        document.getElementById("cat").removeAttribute('style');
+        document.getElementById("dog_activity_Index").setAttribute('style', "display:none;");
+        document.getElementById("cat_activity_Index").removeAttribute('style');
     }
 }
 
@@ -60,8 +60,20 @@ window.onload = function () {
             }
         }));
     //
-    // document.querySelectorAll('.selectbox').forEach((target) =>
-    // target.addEventListener("click", function(){
-    //     console.log(target);
-    // }));
+    document.querySelectorAll('.listbox .list').forEach((target) =>
+    target.addEventListener("click", function(){
+        const rootElement = parentElementWithClass(target, "cal_input_value");
+        rootElement.dataset.val = target.dataset.val;
+        rootElement.firstElementChild.firstElementChild.innerHTML = target.innerHTML;
+        rootElement.firstElementChild.classList.remove('on');
+        rootElement.lastElementChild.classList.remove('on');
+    }));
+}
+
+function parentElementWithClass(target, class_name){
+    let parentWithClass = target.parentElement;
+    while (parentWithClass && !parentWithClass.classList.contains(class_name)) {
+        parentWithClass = parentWithClass.parentElement;
+    }
+    return parentWithClass;
 }
