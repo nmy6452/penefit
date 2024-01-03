@@ -57,6 +57,7 @@ function makeResult() {
     }
     catch(err){
         alert("입력 항목을 빠짐없이 기입해주세요.");
+        displayInfoBox(false);
     }
     
 }
