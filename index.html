@@ -33,7 +33,7 @@
     <div id="petFeedCal">
         <div class="cal_title">사료 급여량 계산기</div>
         <div class="cal_descript">아이에게 맞는 권장 급여량과 급수량을 페네핏이 알려드릴게요 :)</div>
-        <div class="cal_image"><img src="cal_img.png" alt="My Image" width="276px" height="252px"></div>
+        <div class="cal_image"><img src="./img/cal_img.png" alt="My Image" width="276px" height="252px"></div>
         <div class="cal_input_window">
             <table class="cal_input_tbl">
                 <tbody>
@@ -74,7 +74,7 @@
                             <div class="cal_input_value" id="feed">
                                 <button class="selectbox">
                                     <span>선택하세요</span>
-                                    <img class="sel_arrow" src="./img/arrow1.svg"/>
+                                    <img class="sel_arrow" src="./img/arrow1.svg" />
                                 </button>
                                 <ul class="listbox" id="listbox">
                                     <li><button class="list" data-val="feed1">페네밀 벨런스(100g)</button></li>
@@ -93,10 +93,24 @@
                         </th>
                         <td>
                             <div class="cal_input_value">
-                                <label><input type="radio" name="pet_type" onchange="petTypeManage()" value="dog"
-                                        checked />강아지</label>
-                                <label><input type="radio" name="pet_type" onchange="petTypeManage()"
-                                        value="cat" />고양이</label>
+                                <label>
+                                    <input type="radio" name="pet_type" onchange="petTypeManage()" value="dog" checked>
+                                    <div class="pet_type_but">
+                                        <div class="pet_type_but_tit">강아지</div>
+                                        <img src="./img/pene.png" alt="My Image" width="50px" height="50px" />
+                                        <img src="./img/SebSeb.png" alt="My Image" width="50px" height="50px" />
+                                    </div>
+                                    </input>
+                                </label>
+                                <label>
+                                    <input type="radio" name="pet_type" onchange="petTypeManage()" value="cat">
+                                    <div class="pet_type_but">
+                                        <div class="pet_type_but_tit">고양이</div>
+                                        <img src="./img/PT.png" alt="My Image" width="50px" height="50px" />
+                                        <img src="./img/rockrock.png" alt="My Image" width="50px" height="50px" />
+                                    </div>
+                                    </input>
+                                </label>
                             </div>
                         </td>
                     </tr>
@@ -108,7 +122,7 @@
                             <div class="cal_input_value" id="dog_activity_Index">
                                 <button class="selectbox">
                                     <span>선택하세요</span>
-                                    <img class="sel_arrow" src="./img/arrow1.svg"/>
+                                    <img class="sel_arrow" src="./img/arrow1.svg" />
                                 </button>
                                 <ul class="listbox">
                                     <li><button class="list" data-val="BABY">4 개월 이하</button></li>
@@ -127,7 +141,7 @@
                             <div class="cal_input_value" id="cat_activity_Index" style="display:none;">
                                 <button class="selectbox">
                                     <span>선택하세요</span>
-                                    <img class="sel_arrow" src="./img/arrow1.svg"/>
+                                    <img class="sel_arrow" src="./img/arrow1.svg" />
                                 </button>
                                 <ul class="listbox">
                                     <li><button class="list" data-val="BABY">4 개월 이하</button></li>
@@ -231,7 +245,7 @@
             <div class="add_info">
                 <ul>
                     <li>권장 급여량은 OOO기준으로 계산된 참고용으로,
-                         아이의 실제 현재 상태에 맞춰 조절하여 급여해주세요.</li>
+                        아이의 실제 현재 상태에 맞춰 조절하여 급여해주세요.</li>
                     <li>주의사항 뭐시기 저시기</li>
                 </ul>
             </div>
